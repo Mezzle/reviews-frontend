@@ -11,21 +11,21 @@ export const load = () => ({
   type: types.GET
 });
 
-interface HomeState {
+export interface HomeState {
   readonly restaurants: Restaurant[];
 }
 
-const initialState: HomeState = { restaurants: [] };
+export const initialHomeState: HomeState = { restaurants: [] };
 
 const reducer: Reducer = (
-  state: HomeState = initialState,
+  state: HomeState = initialHomeState,
   action: Action<types>
 ) => {
   switch (action.type) {
     case types.GET:
       return {
         ...state,
-        restaurants: [{ name: 'Frankie & Bennys' } as Restaurant]
+        restaurants: [{ name: 'Frankie & Bennys' }, { name: "Chiquito's" }]
       };
     default:
       return state;

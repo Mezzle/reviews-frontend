@@ -1,3 +1,3 @@
 export interface Restaurant {
-  name: string;
+  readonly name: string;
 }

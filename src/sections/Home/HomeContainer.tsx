@@ -4,10 +4,12 @@ import { Restaurant } from '../../models/Restaurant';
 import Home from './components/Home';
 import { HomeContainerProps } from './HomeContainer.props';
 import { load } from './services/home.duck';
+import { restaurantSelector } from './services/home.selectors';
 
 export class HomeContainer extends React.Component<HomeContainerProps> {
   constructor(props: HomeContainerProps) {
     super(props);
+
     props.load();
   }
 
@@ -25,7 +27,7 @@ interface DispatchFromProps {
 }
 
 const mapStateToProps = (state: any): StateFromProps => ({
-  restaurants: []
+  restaurants: restaurantSelector(state)
 });
 
 const mapDispatchToProps: DispatchFromProps = {

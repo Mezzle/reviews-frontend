@@ -1,10 +1,10 @@
 import { AnyAction, combineReducers, Reducer } from 'redux';
 
-import sectionReducer from './sections/reducers';
+import sectionReducer, { SectionsState } from './sections/reducers';
 
-interface RootState {
-  sections?: object;
-  entities?: object;
+export interface RootState {
+  readonly sections?: SectionsState;
+  readonly entities?: object;
 }
 
 const rootReducer: Reducer<RootState, AnyAction> = combineReducers({
