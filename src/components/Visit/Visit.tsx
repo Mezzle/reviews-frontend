@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018 Martin Meredith <martin@sourceguru.net>
+ */
+
 import * as React from 'react';
 import Review from '../Review';
 import { VisitProps } from './Visit.props';

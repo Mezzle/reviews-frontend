@@ -2,6 +2,6 @@
  * Copyright (c) 2018 Martin Meredith <martin@sourceguru.net>
  */
 
-import { Restaurant } from './Restaurant';
+import { get as getApi } from './get';
 
-export default Restaurant;
+export const get = getApi;

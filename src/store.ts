@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018 Martin Meredith <martin@sourceguru.net>
+ */
+
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './root-reducer';

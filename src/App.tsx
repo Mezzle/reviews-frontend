@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018 Martin Meredith <martin@sourceguru.net>
+ */
+
 import * as React from 'react';
 import Home from './sections/Home';
 

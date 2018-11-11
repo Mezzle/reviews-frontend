@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018 Martin Meredith <martin@sourceguru.net>
+ */
+
 import { shallow } from 'enzyme';
 import * as React from 'react';
 import App from './App';

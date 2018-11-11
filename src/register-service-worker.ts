@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018 Martin Meredith <martin@sourceguru.net>
+ */
+
 // tslint:disable:no-console
 // In production, we register a service worker to serve assets from local cache.
 

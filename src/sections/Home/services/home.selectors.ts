@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018 Martin Meredith <martin@sourceguru.net>
+ */
+
 import { createSelector } from 'reselect';
 import { Restaurant } from '../../../models/Restaurant';
 import { RootState } from '../../../root-reducer';
