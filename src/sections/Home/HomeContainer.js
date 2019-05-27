@@ -2,19 +2,22 @@
  * Copyright (c) 2018 - 2019 Martin Meredith <martin@sourceguru.net>
  */
 
-import React from "react";
-import Home from "./components/Home";
-import { restaurantSelector } from "./services/home.selectors";
-import { load } from "./services/home.duck";
-import { connect } from "react-redux";
+import React from 'react';
+import Home from './components/Home';
+import { restaurantSelector } from './services/home.selectors';
+import { load } from './services/home.duck';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-export class HomeContainer extends React.Component {
+class HomeContainer extends React.Component {
   constructor(props) {
     super(props);
+
+    props.load();
   }
 
   render() {
-    return <Home />;
+    return <Home restaurants={this.props.restaurants} />;
   }
 }
 
@@ -23,6 +26,15 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = { load };
+
+HomeContainer.propTypes = {
+  load: PropTypes.func.isRequired,
+  restaurants: PropTypes.arrayOf(PropTypes.object)
+};
+
+HomeContainer.defaultProps = {
+  restaurants: []
+};
 
 export default connect(
   mapStateToProps,

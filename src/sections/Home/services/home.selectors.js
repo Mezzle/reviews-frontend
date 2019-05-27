@@ -1,9 +1,9 @@
 /*
  * Copyright (c) 2018 - 2019 Martin Meredith <martin@sourceguru.net>
  */
-import { createSelector } from "reselect";
+import { createSelector } from 'reselect';
 
-import { initialHomeState } from "./home.duck";
+import { initialHomeState } from './home.duck';
 
 export const sectionsSelector = state =>
   state.sections || { home: initialHomeState };

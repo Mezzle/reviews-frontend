@@ -3,9 +3,9 @@
  */
 
 export const types = {
-  GET: "Home/GET",
-  GET_SUCCESSFUL: "Home/GET_SUCCESSFUL",
-  GET_FAILED: "Home/GET_FAILED"
+  GET: 'Home/GET',
+  GET_SUCCESSFUL: 'Home/GET_SUCCESSFUL',
+  GET_FAILED: 'Home/GET_FAILED'
 };
 
 export const load = () => {
@@ -14,26 +14,27 @@ export const load = () => {
   };
 };
 
-export const initialHomeState = { restaurants: [] };
+export const initialHomeState = { restaurants: [], loading: false };
 
 const reducer = (state = initialHomeState, action) => {
   switch (action.type) {
     case types.GET_SUCCESSFUL:
       return {
         ...state,
-        restaurants: action.payload
+        restaurants: action.payload,
+        loading: false
       };
 
     case types.GET:
       return {
         ...state,
-        restaurants: { ...state.restaurants, loading: true }
+        loading: true
       };
 
     case types.GET_FAILED:
       return {
         ...state,
-        restaurants: { ...state.restaurants, loading: false }
+        loading: false
       };
 
     default:
