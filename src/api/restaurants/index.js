@@ -3,5 +3,7 @@
  */
 
 import { get as getApi } from './get';
+import { getOne as getOneApi } from './get-one';
 
 export const get = getApi;
+export const getOne = getOneApi;

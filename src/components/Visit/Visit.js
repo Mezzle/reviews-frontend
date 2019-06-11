@@ -6,8 +6,8 @@ import * as React from 'react';
 import Review from '../Review';
 
 export const Visit = ({ visit }) => (
-  <React.Fragment>
+  <>
     <time>{visit.date}</time>
     <Review review={visit.review} />
-  </React.Fragment>
+  </>
 );

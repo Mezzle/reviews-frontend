@@ -2,6 +2,7 @@
  * Copyright (c) 2019 Martin Meredith <martin@sourceguru.net>
  */
 import React from 'react';
+import Restaurant from './sections/Restaurant';
 
 const routes = [
   {
@@ -10,8 +11,9 @@ const routes = [
     exact: true
   },
   {
-    path: '/test',
-    component: () => <h1>Test</h1>
+    path:
+      '/restaurant/:restaurant_id([0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12})',
+    component: () => <Restaurant />
   }
 ];
 

@@ -17,7 +17,7 @@ class HomeContainer extends React.Component {
   }
 
   render() {
-    return <Home restaurants={this.props.restaurants} />;
+    return <Home {...this.props} />;
   }
 }
 

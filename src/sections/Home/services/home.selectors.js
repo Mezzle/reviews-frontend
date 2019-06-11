@@ -3,10 +3,7 @@
  */
 import { createSelector } from 'reselect';
 
-import { initialHomeState } from './home.duck';
-
-export const sectionsSelector = state =>
-  state.sections || { home: initialHomeState };
+import { sectionsSelector } from '../../../selectors';
 
 export const homeSelector = createSelector(
   sectionsSelector,

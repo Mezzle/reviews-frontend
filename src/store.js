@@ -11,14 +11,19 @@ import { createBrowserHistory } from 'history';
 
 export const history = createBrowserHistory();
 
-const sagaMiddleware = createSagaMiddleware();
+export default function configureStore() {
+  const composeEnhancer =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const middleware = [sagaMiddleware, routerMiddleware(history)];
+  const sagaMiddleware = createSagaMiddleware();
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const enhancer = composeEnhancers(applyMiddleware(...middleware));
-const store = createStore(rootReducer(history), enhancer);
+  const enhancer = composeEnhancer(
+    applyMiddleware(sagaMiddleware, routerMiddleware(history))
+  );
 
-sagaMiddleware.run(rootSaga);
+  const store = createStore(rootReducer(history), enhancer);
 
-export default store;
+  sagaMiddleware.run(rootSaga);
+
+  return store;
+}
